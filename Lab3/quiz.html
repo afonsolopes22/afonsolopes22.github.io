@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz sobre a Cidade</title>
 </head>
 <body>
 
     <h1>Quiz sobre a Cidade</h1>
-
-    <h2>Quizz</h2>
     
-        
+    <h2>Quizz</h2>
+
+    <form method="get" action="https://postman-echo.com/get">
+
         <fieldset>
             <legend>Dados Pessoais</legend>
+
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome"><br>
-            
+
             <label for="apelido">Apelido:</label>
-            <input type="text" id="apelido" name="apelido"><br>
-    
-            
+            <input type="text" id="apelido" ><br>
+
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br>
+            <input type="email" id="email"><br>
         </fieldset>
+
         <fieldset>
+            <legend>Quizz sobre a Cidade</legend>
 
- 
- <fieldset>
-    <legend>        Quizz sobre Barcelona</legend><br>
-    
-    <label for="populacao">Qual é a população aproximada da cidade?</label>
-    <input type="number" id="populacao" name="populacao"><br><br>
+            <label for="populacao">Qual é a população aproximada da cidade?</label>
+            <input type="number" id="populacao" name="populacao"><br><br>
 
-    <label>Qual o ponto turístico mais famoso?</label><br>
+            <label>Qual o ponto turístico mais famoso?</label><br>
+            <input type="radio" id="ponte" name="ponto" value="Ramblas" required>
+            <label for="ponte">Ramblas</label><br>
+            <input type="radio" id="praia" name="ponto" value="Sagrada Família">
+            <label for="praia">Sagrada Família</label><br>
+            <input type="radio" id="museu" name="ponto" value="Parc Guell">
+            <label for="museu">Parc Guell</label><br><br>
 
-    <input type="radio" id="ponte" name="ponto" value="ramblas">
-    <label for="ponte">Ramblas</label><br>
-    
-    <input type="radio" id="praia" name="ponto" value="razzmataz">
-    <label for="praia">Razzmataz</label><br>
-    
-    <input type="radio" id="museu" name="ponto" value="pacha">
-    <label for="museu">Pacha</label><br><br>
+            <label for="atividades">Quais atividades gostou de fazer na cidade?</label><br>
+            <input type="checkbox" id="caminhada" name="atividades" value="Caminhada">
+            <label for="caminhada">Caminhadas</label><br>
+            <input type="checkbox" id="restaurantes" name="atividades" value="Restaurantes">
+            <label for="restaurantes">Restaurantes</label><br>
+            <input type="checkbox" id="cultura" name="atividades" value="Cultura">
+            <label for="cultura">Explorar a Cultura</label><br><br>
 
-    <label for="fundacao">Data de fundação do Futbol Club Barcelona</label><br>
-    <input type="date" id="fundacao" name="fundacao"><br><br>
+            <label for="fundacao">Data de fundação da cidade:</label>
+            <input type="date" id="fundacao" name="fundacao"><br><br>
 
-    <label for="cor">Cor que melhor representa a cidade:</label><br>
-    <input type="color" id="cor" name="cor"><br>
+            <label for="horario">Melhor horário para visitar o centro histórico:</label>
+            <input type="time" id="horario" name="horario"><br><br>
 
-    <label for="nota">De 1 a 10, qual a avaliação da cidade?</label>
-    <input type="range" id="nota" name="nota" min="1" max="10"><br><br>
+            <label for="cor">Cor que melhor representa a cidade:</label>
+            <input type="color" id="cor" name="cor" value="#ff5733"><br><br>
 
-    <label for="comentario">Comentário sobre a cidade:</label>
-    <textarea id="comentario" name="comentario" rows="3" cols="40"></textarea>
+            <label for="nota">De 1 a 10, qual a avaliação da cidade?</label>
+            <input type="range" id="nota" name="nota" min="1" max="10" step="1"><br><br>
 
-    <label for="horario">Melhor horário para visitar o centro histórico:</label>
-    <input type="time" id="horario" name="horario"><br><br>
+            <label for="comentario">Comentário sobre a cidade:</label><br>
+            <textarea id="comentario" name="comentario" rows="4" cols="50" maxlength="200"></textarea><br><br>
 
-    <label for="atividades">Quais atividades gostou de fazer na cidade?</label>
-    <input type="checkbox" id="caminhada" name="atividades" value="caminhada">
-    <label for="caminhada">Caminhadas</label>
-    <input type="checkbox" id="restaurantes" name="atividades" value="restaurantes">
-    <label for="restaurantes">Restaurantes</label>
-    <input type="checkbox" id="passeios" name="atividades" value="Cultura">
-    <label for="passeios">Cultura</label><br><br>
+            <label for="imagem">Envie uma imagem da cidade:</label><br>
+            <input type="image" src="https://via.placeholder.com/100" alt="Envie a imagem"><br><br>
 
+            <input type="reset" value="Redefinir formulário"><br><br>
+        </fieldset>
 
+        <input type="submit" value="Enviar Quizz">
 
+    </form>
 
-
-    <input type="reset" value="Redefinir formulário">
-    
-
-    
-        
-
+</body>
+</html>
