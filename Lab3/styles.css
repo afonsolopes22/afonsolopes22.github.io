@@ -1,0 +1,23 @@
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+p {
+    font-size: 1.2em;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #4CAF50;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+}
+
+
