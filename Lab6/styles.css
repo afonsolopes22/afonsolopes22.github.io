@@ -261,6 +261,7 @@ section {
     font-size: 18px;
 }
 
+
 .iframe-box, .table-box {
     height: 200px;
     background-color: #e0e0e0;
@@ -723,18 +724,6 @@ td {
 }
 
 
-#poema {
-    display: flex;
-    justify-content: center;  
-    align-items: center;  
-    width: 100vw;  
-    height: calc(100vh - 100px);  
-    background-color: #add8e6;  
-    padding: 20px;
-    box-sizing: border-box;  
-    text-align: center;
-    margin: 0; 
-}
 
 #poema div {
     max-width: 600px;
@@ -748,5 +737,4 @@ td {
     line-height: 1.5;  
     margin: 0;
 }
-
 
