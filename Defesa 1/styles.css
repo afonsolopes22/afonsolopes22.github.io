@@ -1,4 +1,4 @@
-head{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,6 +27,7 @@ align-items:center ;
     display:flex;
     background-color: white;
     border: 2px black;
+    margin-top:10px;
     margin-bottom:20 px;
     width: 100%;
     max-width: 900px;
@@ -35,7 +36,7 @@ align-items:center ;
     width: 45%;
 }
 
-.intro-web .image img {
+.introWeb .image img {
     max-width: 100%;
     height: auto;
 }
@@ -43,12 +44,13 @@ align-items:center ;
 .lab-Botao {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 10px;
 }
 
 .lab-Botao button {
     padding: 10px;
-    background-color: #e0e0e0;
+    background-color: colour=white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
