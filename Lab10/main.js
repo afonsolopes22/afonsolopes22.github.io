@@ -1,13 +1,35 @@
-// Verifica se existe um cesto inicial no localStorage, caso contrário, inicializa um cesto vazio.
-if (!localStorage.getItem("produtos-selecionados")) {
-    localStorage.setItem("produtos-selecionados", JSON.stringify([]));
-}
+// URL da API para obter os produtos
+const API_URL = "https://deisishop.pythonanywhere.com/shop/getProducts";
 
+// Aguarda o carregamento completo do DOM antes de executar o código
 document.addEventListener("DOMContentLoaded", () => {
-    carregarProdutos(produtos);
-    atualizaCesto();
+    fazerRequisicaoAJAX(); // Faz a requisição AJAX à API
+    atualizaCesto(); // Atualiza o cesto com os produtos do Local Storage
 });
 
+// Função para fazer a requisição AJAX usando fetch
+function fazerRequisicaoAJAX() {
+    const xhr = new XMLHttpRequest(); // Cria o objeto XMLHttpRequest
+
+    xhr.open("GET", API_URL, true); // Configura a requisição: método GET e URL
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            // Converte a resposta JSON para um objeto JavaScript
+            const produtos = JSON.parse(xhr.responseText);
+            carregarProdutos(produtos); // Renderiza os produtos na página
+        } else {
+            console.error(`Erro na requisição: ${xhr.status} - ${xhr.statusText}`);
+        }
+    };
+
+    xhr.onerror = function () {
+        console.error("Erro de rede durante a requisição AJAX.");
+    };
+
+    xhr.send(); // Envia a requisição
+}
+
+// Função para carregar e renderizar os produtos na página
 function carregarProdutos(produtos) {
     const listaProdutos = document.getElementById("lista-produtos");
 
@@ -17,16 +39,17 @@ function carregarProdutos(produtos) {
     });
 }
 
+// Função para criar um elemento <article> com as informações de um produto
 function criarProduto(produto) {
     const artigo = document.createElement("article");
     artigo.className = "produto";
 
     const titulo = document.createElement("h3");
-    titulo.textContent = produto.title;
+    titulo.textContent = produto.name;
 
     const imagem = document.createElement("img");
     imagem.src = produto.image;
-    imagem.alt = produto.title;
+    imagem.alt = produto.name;
 
     const descricao = document.createElement("p");
     descricao.textContent = produto.description;
@@ -37,7 +60,6 @@ function criarProduto(produto) {
     const botaoAdicionar = document.createElement("button");
     botaoAdicionar.textContent = "+ Adicionar ao Cesto";
 
-    // Adiciona o evento para adicionar o produto ao cesto
     botaoAdicionar.addEventListener("click", () => {
         adicionarAoCesto(produto);
     });
@@ -51,32 +73,21 @@ function criarProduto(produto) {
     return artigo;
 }
 
+// Função para adicionar um produto ao cesto
 function adicionarAoCesto(produto) {
-    let cestoAtual = JSON.parse(localStorage.getItem("produtos-selecionados"));
-
-    // Verifica se o produto já está no cesto
-    const index = cestoAtual.findIndex((item) => item.id === produto.id);
-
-    if (index === -1) {
-        // Se não estiver, adiciona o produto com quantidade 1
-        cestoAtual.push({ ...produto, quantidade: 1 });
-    } else {
-        // Se já estiver, incrementa a quantidade
-        cestoAtual[index].quantidade++;
-    }
-
+    const cestoAtual = JSON.parse(localStorage.getItem("produtos-selecionados")) || [];
+    cestoAtual.push(produto);
     localStorage.setItem("produtos-selecionados", JSON.stringify(cestoAtual));
     atualizaCesto();
 }
 
+// Função para atualizar o cesto com os produtos do Local Storage
 function atualizaCesto() {
-    console.log("Atualizando o cesto...");
     const produtosEscolhidos = document.getElementById("produtos-escolhidos");
     const valorTotal = document.getElementById("valor-total");
 
-    const cestoAtual = JSON.parse(localStorage.getItem("produtos-selecionados"));
+    const cestoAtual = JSON.parse(localStorage.getItem("produtos-selecionados")) || [];
 
-    // Limpa a interface do cesto antes de atualizá-la
     produtosEscolhidos.innerHTML = "";
 
     cestoAtual.forEach((produto) => {
@@ -84,32 +95,28 @@ function atualizaCesto() {
         produtosEscolhidos.appendChild(artigoCesto);
     });
 
-    // Calcula o valor total
-    const total = cestoAtual.reduce((soma, produto) => soma + produto.price * produto.quantidade, 0);
+    const total = cestoAtual.reduce((soma, produto) => soma + produto.price, 0);
     valorTotal.textContent = total.toFixed(2) + " €";
 }
 
+// Função para criar o elemento <article> no cesto
 function criaProdutoCesto(produto) {
     const artigo = document.createElement("article");
     artigo.className = "produto-cesto";
 
     const imagem = document.createElement("img");
     imagem.src = produto.image;
-    imagem.alt = produto.title;
+    imagem.alt = produto.name;
 
     const titulo = document.createElement("h4");
-    titulo.textContent = produto.title;
+    titulo.textContent = produto.name;
 
     const preco = document.createElement("p");
     preco.innerHTML = `<strong>${produto.price.toFixed(2)} €</strong>`;
 
-    const quantidade = document.createElement("p");
-    quantidade.textContent = `Quantidade: ${produto.quantidade}`;
-
     const botaoRemover = document.createElement("button");
     botaoRemover.textContent = "- Remover do Cesto";
 
-    // Adiciona o evento para remover o produto do cesto
     botaoRemover.addEventListener("click", () => {
         removerDoCesto(produto);
     });
@@ -117,27 +124,15 @@ function criaProdutoCesto(produto) {
     artigo.appendChild(imagem);
     artigo.appendChild(titulo);
     artigo.appendChild(preco);
-    artigo.appendChild(quantidade);
     artigo.appendChild(botaoRemover);
 
     return artigo;
 }
 
+// Função para remover um produto do cesto
 function removerDoCesto(produto) {
-    let cestoAtual = JSON.parse(localStorage.getItem("produtos-selecionados"));
-
-    const index = cestoAtual.findIndex((item) => item.id === produto.id);
-
-    if (index !== -1) {
-        if (cestoAtual[index].quantidade > 1) {
-            // Decrementa a quantidade se for maior que 1
-            cestoAtual[index].quantidade--;
-        } else {
-            // Remove o produto se a quantidade for 1
-            cestoAtual.splice(index, 1);
-        }
-    }
-
+    let cestoAtual = JSON.parse(localStorage.getItem("produtos-selecionados")) || [];
+    cestoAtual = cestoAtual.filter((item) => item.id !== produto.id);
     localStorage.setItem("produtos-selecionados", JSON.stringify(cestoAtual));
     atualizaCesto();
 }
