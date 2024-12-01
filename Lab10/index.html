@@ -3,41 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja</title>
+    <title>Loja DEISI</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Loja</h1>
+        <h1>Loja DEISI</h1>
         <nav>
             <ul>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#cesto">Cesto</a></li>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="#cart">Cesto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="produtos">
+        <section id="products">
             <h2>Selecione os seus Produtos</h2>
-            <div id="lista-produtos" class="flex-container"></div>
+
+            <section id="filters" class="flex-container">
+                <div>
+                    <label for="category-filter">Filtrar por Categoria:</label>
+                    <select id="category-filter">
+                        <option value="all">Todas as categorias</option>
+                        <option value="T-shirts">T-shirts</option>
+                        <option value="Canecas">Canecas</option>
+                        <option value="Meias">Meias</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="sort-options">Ordenar:</label>
+                    <select id="sort-options">
+                        <option value="default">Ordenar pelo padrão</option>
+                        <option value="asc">Preço Crescente</option>
+                        <option value="desc">Preço Decrescente</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="search">Procurar:</label>
+                    <input type="text" id="search" placeholder="Pesquise por produto">
+                </div>
+            </section>
+
+            <div id="product-list" class="flex-container"></div>
         </section>
 
-        <section id="cesto">
+        <section id="cart">
             <h2>Produtos Selecionados</h2>
-            <div id="produtos-escolhidos" class="flex-container"></div>
-            <div id="custo-total">
-                <h3>Custo total: <span id="valor-total">0.00 €</span></h3>
+            <div id="cart-items" class="flex-container"></div>
+            <div id="cart-summary">
+                <h3>Custo total: <span id="total-price">0.00 €</span></h3>
+                <label>
+                    <input type="checkbox" id="student-checkbox"> Sou estudante do DEISI
+                </label>
+                <input type="text" id="coupon" placeholder="Cupão de desconto">
+                <button id="buy-button">Comprar</button>
+                <p id="final-price"></p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>2024</p>
+        <p>&copy; 2024 - Loja DEISI</p>
     </footer>
 
-    <!-- Importa os arquivos JavaScript -->
-    <script src="produtos.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

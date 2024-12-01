@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
+    background-color: purple;
+    color: white;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -52,6 +52,7 @@ section {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black;
 }
 
 .flex-container {
@@ -61,7 +62,7 @@ section {
     justify-content: center;
 }
 
-/* Estilos para cada produto */
+
 .produto {
     background-color: white;
     border: 1px solid white;
@@ -107,19 +108,62 @@ section {
     transform: scale(1.05);
 }
 
-#cesto {
-    background-color: white;
+
+.produto-cesto {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: black;
+    transition: transform 0.3s;
+    text-align: center;
 }
 
-#cesto h2 {
-    margin-bottom: 20px;
+.produto-cesto img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
+
+.produto-cesto h4 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.produto-cesto p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.produto-cesto button {
+    background-color: rgb(230, 230, 230);
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.produto-cesto button:hover {
+    background-color: purple;
+    color: white;
+}
+
+.produto-cesto:hover {
+    transform: scale(1.05);
+}
+
 
 #custo-total {
     margin-top: 20px;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
     text-align: center;
+    color: white;
 }
 
 footer {
