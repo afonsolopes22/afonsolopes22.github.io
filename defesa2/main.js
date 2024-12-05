@@ -137,14 +137,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if(!morada){
             alert("Insira a morada")
         return;
-
-
-
         }
 
         elementos.finalPrice.innerHTML = `
             <p>Valor final a pagar (com eventuais descontos): ${totalComDesconto.toFixed(2)}€</p>
             <p>Referência de pagamento: ${referencia}</p>
+            <p>address:${morada}</p>
         `;
 
         cesto = [];
@@ -159,7 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarCesto()
     }
      
-
     elementos.buyButton.addEventListener("click", processarCompra);
     elementos.searchInput.addEventListener("input", filtrarProdutos);
     elementos.categoryFilter.addEventListener("change", filtrarProdutos);
