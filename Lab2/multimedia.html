@@ -1,0 +1,95 @@
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+
+        <title>Cidade</title>
+    </head>
+    <body>
+        <header>
+            <h1>Multimédia</h1>
+        </header>
+        <main>
+
+            <nav>
+  <a href="index.html">Home</a>
+  <a href="local.html">Localização</a>
+  <a href="multimedia.html">Multimédia</a>
+  <a href="info.html">Informação</a>
+</nav>
+<body>
+    <h2>Multimédia</h2>
+    <p>Explore nesta página vários recursos multimédia sobre a minha cidade.</p>
+
+   
+    <div class="ancoras">
+        <a href="#fotografias">Fotografias</a>
+        <a href="#video">Vídeo</a>
+        <a href="#poesia">Poesia</a>
+    </div>
+
+   
+    <section>
+        <h3 id="fotografias">Fotografias</h3>
+        <div class="fotografias">
+            <img src="images/b1.jpg" alt="">
+            <img src="images/b2.jpg" alt="">
+            <img src="images/b3.jpg" alt="">
+            <img src="images/b4.jpg" alt="">
+            <img src="images/b5.jpg" alt="">
+            <img src="images/b6.jpg" alt="">
+            <img src="images/b7.jpg" alt="">
+            <img src="images/b8.jpg" alt="">
+        </div>
+    </section>
+
+    
+    <section>
+        <h3 id="video">Vídeo</h3>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/2T_LFhCYsDc?si=4ONvy74fhvYMXJiQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    
+    <section>
+        <h3 id="poesia">Poesia</h3>
+        <div class="poesia">
+            <p>No alto da serra, o céu a tocar,</p> <p>Surge Bogotá, pronta a encantar.</p> <p>Entre montanhas e neblina fria,</p> <p>Pulsa a cidade com alma e poesia.</p> <p>La Candelaria, história a viver,</p> <p>Ruas de pedra, arte a florescer.</p> <p>O som dos andes, cafés no ar,</p> <p>No coração há muito por amar.</p> <p>Ao longe brilha Monserrate fiel,</p> <p>Olha a cidade sob um vasto céu.</p> <p>Gente que luta, sonha e cria,</p> <p>Faz de Bogotá pura energia.</p>
+        </div>
+    </section>
+</body>
+</html>
+
+<style>
+        .fotografias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .fotografias img {
+            width: 120px;
+            height: 80px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            
+        }
+
+   
+        .ancoras {
+            margin-bottom: 20px;
+        }
+
+        .ancoras a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        .ancoras a:hover {
+            text-decoration: underline;
+        }
+    </style>
