@@ -1,55 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8">
-  <title>Primeira Página</title>
-   <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Page — A minha Cidade</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="site-header">
+    <h1 class="logo">A minha Cidade</h1>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#disciplina">DIW</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <h1>Primeira Página Web!</h1>
-</header>
+  <!-- HERO -->
+  <section id="home" class="hero" role="banner">
+    <img
+      class="hero-img"
+      src="imagens/Bogota-Cityscape-HD-Wallpapers-122032.jpg"
+      alt="Panorâmica de Bogotá ao entardecer">
+    <div class="hero-content">
+      <div class="hero-box">
+  <h2>Bogotá</h2>
+  <p>Explora os meus projetos de Desenvolvimento de Interfaces Web.</p>
 
-<main>
-  <p>Eis a minha primeira página Web!</p>
-  <p>
-    Na Unidade Curricular de 
-    <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232">
-      Desenvolvimento de Interfaces Web
-    </a>
-    abordaremos as seguintes tecnologias Web &#127760;:
-  </p>
-  <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>React e Next.js</li>
-  </ul>
-  <p> Iremos criar soluções criativas</p>
-  <nav>       
-    <ul>  
-      <li> <a  href="lab1/index.html">Lab1</a> </a></li>
-      <li> <a  href="Lab2/index.html">Lab2</a> </a></li>
-    </ul>
+      <a class="btn-cta" href="#projetos">Ver projetos</a>
+    </div>
+  </section>
 
+  <!-- PROJETOS -->
+  <section id="projetos" class="sec-projetos">
+    <h2>Projetos</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Lab 1</h3>
+        <p>Página inicial, semântica HTML5 e navegação.</p>
+        <a class="btn" href="lab1/index.html">Abrir</a>
+      </article>
+      <article class="card">
+        <h3>Lab 2</h3>
+        <p>A minha Cidade: localização, multimédia e informação.</p>
+        <a class="btn" href="Lab2/index.html">Abrir</a>
+      </article>
+      <article class="card">
+        <h3>Lab 3</h3>
+        <p>Experiências com CSS/JS.</p>
+        <a class="btn" href="Lab3/index.html">Abrir</a>
+      </article>
+    </div>
+  </section>
 
-  </nav>
+  <!-- DISCIPLINA -->
+  <section id="disciplina" class="sec-disciplina">
+    <h2>Desenvolvimento de Interfaces Web</h2>
+    <div class="disciplina-wrap">
+      <div class="texto">
+        <p>Na UC DIW trabalhamos HTML, CSS, JavaScript, React e Next.js com foco em boas práticas e acessibilidade.</p>
+        <ul>
+          <li>HTML semântico e estrutura</li>
+          <li>CSS (Flexbox, responsividade)</li>
+          <li>Interatividade com JavaScript</li>
+          <li>React / Next.js</li>
+        </ul>
+      </div>
+      <figure class="wordcloud">
+        <img src="images/wordcloud.png" alt="Wordcloud com termos de DIW">
+        <figcaption>Palavras-chave da disciplina</figcaption>
+      </figure>
+    </div>
+  </section>
 
-
-  
-
-
-
-
-
-  <p>Iremos criar soluções criativas!</p>
-  <img src="imagens/image.png" alt="Desenvolvimento de Interfaces Web">img { width: 300px}
-</main>
-
-<footer>
-  <p>Universidade Lusófona © 2025</p>
-</footer>
-
+  <footer class="site-footer">
+    <p>DIW 2025</p>
+  </footer>
 </body>
 </html>

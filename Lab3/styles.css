@@ -1,0 +1,220 @@
+/* ===================== */
+/* Header / Navegação    */
+/* ===================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #111;
+  color: #fff;
+}
+.site-header .logo { margin: 0; }
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.menu a:hover { text-decoration: underline; }
+
+/* ===================== */
+/* Âncoras               */
+/* ===================== */
+.ancoras a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #0066cc;
+}
+.ancoras a:hover { text-decoration: underline; }
+
+/* ===================== */
+/* Secções full-screen   */
+/* ===================== */
+.sec {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.sec-fotos   { background: #f5f7fb; }
+.sec-video   { background: #fff3cb; }
+.sec-poesia  { background: #f4f4f4; }
+.sec-pixabay { background: #0f0f0f; }
+
+/* ===================== */
+/* Galeria de Fotos      */
+/* ===================== */
+.fotografias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 1100px;
+}
+.fotografias img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.fotografias img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,.18);
+  border-color: #bbb;
+}
+
+/* ===================== */
+/* Vídeo responsivo      */
+/* ===================== */
+.video-wrap {
+  position: relative;
+  width: min(100%, 960px);
+  aspect-ratio: 16/9;
+  margin: auto;
+}
+.video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===================== */
+/* Poesia (nth-child)    */
+/* ===================== */
+.poesia {
+  max-width: 900px;
+  margin: auto;
+  padding: 18px;
+  background: #fff;
+  border-left: 4px solid #555;
+  border-radius: 8px;
+}
+.poesia p:nth-child(odd) { color: darkblue; font-style: italic; }
+.poesia p:nth-child(even){ color: darkred; font-weight: bold; }
+
+/* ===================== */
+/* Pixabay Hero          */
+/* ===================== */
+.pixabay-hero {
+  position: relative;
+  width: min(1200px, 100%);
+}
+.pixabay-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+.pixabay-hero:hover img { transform: scale(1.02); }
+.pixabay-hero .frase {
+  position: absolute;
+  left: 4vw;
+  bottom: 4vw;
+  color: #fff;
+  text-shadow: 0 3px 16px rgba(0,0,0,.45);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 5rem);
+  margin: 0;
+}
+
+/* ===================== */
+/* Layout base + texto   */
+/* ===================== */
+main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+h2, h3 { margin-top: 0; }
+/* ---- GRID BASE ---- */
+.info-grid{
+  --gap: 16px;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 0.4fr 1fr 0.3fr 0.3fr; /* como no esquema do exemplo */
+  grid-template-rows: auto 1fr auto auto 1fr auto auto;
+  grid-template-areas:
+    "hero-card hero-card hero-card hero-card"  /* linha 1 */
+    "hero-img  main      main      main"       /* linha 2 */
+    "sidebar   main      main      main"       /* linha 3 */
+    "sidebar   extra     extra     extra"      /* linha 4 */
+    "gallery   gallery   related   empty"      /* linha 5 */
+    "gridfoot  gridfoot  gridfoot  gridfoot";  /* linha 6 */
+  align-items: start;
+}
+
+/* Áreas */
+.hero-card { grid-area: hero-card; background:#fff3cb; padding:20px; border-radius:12px; }
+.hero-img  { grid-area: hero-img; margin:0; }
+.hero-img img{ width:100%; height:100%; object-fit:cover; border-radius:12px; }
+.sidebar   { grid-area: sidebar; background:#f5f7fb; padding:16px; border-radius:12px; }
+.main      { grid-area: main; background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,.06); }
+.extra     { grid-area: extra; background:#eef6ff; padding:16px; border-radius:12px; }
+.gallery   { grid-area: gallery; display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
+.gallery img{ width:100%; aspect-ratio: 1 / 1; object-fit:cover; border-radius:10px; transition: transform .25s ease; }
+.gallery img:hover{ transform: scale(1.03); }
+.related   { grid-area: related; background:#f9f9f9; padding:16px; border-radius:12px; }
+.empty     { grid-area: empty; background: transparent; } /* espaço em branco propositado */
+.grid-footer{ grid-area: gridfoot; text-align:center; padding:12px; color:#666; }
+
+/* Tipografia rápida */
+.info-grid h2,h3{ margin: 0 0 10px; }
+.info-grid p{ margin: 0 0 10px; }
+.info-grid ul{ margin: 0; padding-left: 18px; }
+
+/* Bordas/realce */
+.hero-card, .sidebar, .extra, .related { border:1px solid #e6e6e6; }
+.hero-card h2{ font-size: clamp(1.6rem, 3vw, 2.2rem); }
+
+/* ---- RESPONSIVO ---- */
+@media (max-width: 1000px){
+  .info-grid{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-areas:
+      "hero-card hero-card"
+      "hero-img  hero-img"
+      "main      main"
+      "sidebar   extra"
+      "gallery   gallery"
+      "related   empty"
+      "gridfoot  gridfoot";
+  }
+  .gallery{ grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px){
+  .info-grid{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero-card"
+      "hero-img"
+      "main"
+      "sidebar"
+      "extra"
+      "gallery"
+      "related"
+      "gridfoot";
+  }
+  .gallery{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Imagens fluidas e foco visível */
+.info-grid img{ display:block; width:100%; height:auto; }
+.info-grid a{ color:#0b63c7; text-decoration:none; }
+.info-grid a:hover{ text-decoration:underline; }
+.info-grid a:focus-visible{ outline:2px solid #0b63c7; outline-offset:2px; }
+
+/* Espaço geral do main nesta página (opcional) */
+main { max-width: 1200px; margin: 0 auto; padding: 20px; }

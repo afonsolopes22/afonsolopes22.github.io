@@ -1,3 +1,122 @@
-body {
-    background-color: #b3b3b3;
+/* === Paleta 60-30-10 === */
+:root{
+  --dominant: #f7c600;     /* 60% amarelo */
+  --complement: #0f0f0f;   /* 30% preto/very dark */
+  --accent: #2ecc71;       /* 10% verde (CTA) */
+  --text-dark: #111;
+  --text-light: #fff;
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;scroll-behavior:smooth}
+body{
+  font-family:system-ui,Arial,sans-serif;
+  color:var(--text-dark);
+  line-height:1.6;
+  background:var(--dominant);              /* amarelo como cor dominante */
+}
+
+/* Header (parte da “faixa” escura = 30%) */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(15,15,15,.92);           /* preto */
+  color:var(--text-light);
+  backdrop-filter:saturate(140%) blur(6px);
+}
+.logo{margin:0;font-size:1.1rem}
+nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
+nav a{color:var(--text-light);text-decoration:none;font-weight:600}
+nav a:hover{text-decoration:underline}
+
+/* Secções em ecrã inteiro */
+section{min-height:100vh;padding:80px 24px 40px;display:grid;place-items:center}
+
+/* HERO (imagem + overlay amarelo para reforçar o 60%) */
+.hero{position:relative;padding:0;color:var(--text-dark)}
+.hero-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(1) contrast(1);           /* mantém fotografia viva */
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(
+    0deg,
+    rgba(247,198,0,.75) 0%,                 /* overlay amarelo (dominante) */
+    rgba(247,198,0,.45) 50%,
+    rgba(247,198,0,.25) 100%
+  );
+}
+.hero-content{
+  position:relative;z-index:1;text-align:center;color:var(--complement);
+  max-width:900px;margin:0 auto;padding:0 16px;
+}
+.hero-content h2{margin:0 0 12px;font-size:clamp(2rem,5vw,3.5rem)}
+.hero-content p{margin:0 0 24px;font-size:clamp(1rem,2.2vw,1.25rem)}
+.btn-cta{
+  display:inline-block;padding:12px 22px;border-radius:999px;
+  background:var(--accent);color:#0b0b0b;font-weight:800;text-decoration:none;
+  box-shadow:0 6px 16px rgba(0,0,0,.18)
+}
+.btn-cta:hover{filter:brightness(1.05)}
+.hero-box {
+  background: rgba(200, 200, 200, 0.85); /* cinzento translúcido */
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: inline-block;   /* a caixa adapta-se ao conteúdo */
+}
+
+.hero-box h2,
+.hero-box p {
+  margin: 0;
+  color: #111; /* texto escuro para contraste */
+}
+
+
+/* PROJETOS (faixa clara sobre amarelo para legibilidade) */
+.sec-projetos{
+  background:#fff;                           /* “respiro” dentro do 60% */
+  border-radius:12px;
+  width:min(1150px,96%);                     /* centrado como bloco */
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+.sec-projetos h2{margin:0 0 24px}
+.cards{width:min(1100px,100%);display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.card{
+  flex:1 1 260px;max-width:340px;background:#fff;border:1px solid #e6e6e6;
+  border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.06)
+}
+.card h3{margin:0 0 8px}
+.card p{margin:0 0 16px;color:#333}
+.btn{
+  display:inline-block;padding:10px 16px;border-radius:10px;
+  background:var(--complement);color:var(--text-light);text-decoration:none;font-weight:600
+}
+.btn:hover{background:#222}
+
+/* DISCIPLINA (faixa complementar: preto suave + cartões claros) */
+.sec-disciplina{
+  background:var(--complement);
+  color:var(--text-light);
+  width:100%;padding:80px 24px 40px;
+}
+.sec-disciplina h2{margin:0 0 24px}
+.disciplina-wrap{
+  width:min(1100px,100%);margin:auto;background:#1c1c1c; /* tom escuro distinto */
+  border-radius:14px;padding:24px;display:grid;gap:24px;grid-template-columns:1fr;align-items:center
+}
+.wordcloud img{max-width:520px;width:100%;height:auto;display:block;border-radius:12px;background:#fff}
+.texto ul{margin:8px 0 0 18px}
+
+/* Desktop: texto + wordcloud lado a lado */
+@media (min-width:900px){
+  .disciplina-wrap{grid-template-columns:1.1fr .9fr}
+}
+
+/* Footer (complementar) */
+.site-footer{
+  background:var(--complement);color:var(--text-light);
+  text-align:center;padding:20px
 }
