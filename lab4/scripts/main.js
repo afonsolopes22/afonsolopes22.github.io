@@ -2,7 +2,7 @@ document.getElementById('header-text').addEventListener('mouseover', function() 
     this.textContent = '1. Obrigado por passares!';
 });
 document.getElementById('header-text').addEventListener('mouseout', function() {
-    this.textContent = '1. Passa por aqui!';  // Retorna ao texto original quando o mouse sai
+    this.textContent = '1. Passa por aqui!';  
 });
 
 
@@ -37,3 +37,43 @@ inputBox.addEventListener('input', () => {
   colorIndex = (colorIndex + 1) % colors.length;
   inputBox.style.backgroundColor = colors[colorIndex];
 });
+/*
+
+const passa= documento.querrySelector("#passa");
+  -----Funcoes / acoes / handlers-----------
+
+  function onMouseOver(){
+    passa.textContent = "1. obg por passares"
+  }
+    function onMouseOut(){
+    passa.textContent="1.pasa por aqui"
+    }
+  passa.onmouseover=onmouseover();
+  passa.onmouseout = onmouseout();
+
+---------------------------------------------------------------------------------------
+  const pinta= documento.querrySelectos("#pinta");
+
+  pintared = function(){
+      pinta.style.color="red":
+  }
+
+    //Event Listeners
+
+    documento.querySelector("#red").onclick=pintaRed
+    documento.querySelector("#green").onclick= =>{pinta.style.colour="green"}
+    documento.querySelector("#blue").eventListener('click', ()=> {pinta.style.colour="blue"})
+
+    ------------------------------------------------------------------------------------------------------------~~
+    let index=0;
+    
+    
+    
+    function colorir(){
+    inputcolorir.style.background=cores[index];
+    index=(index+1)% cores.lenght;
+
+    inputColorir.onkeyup=colorir();
+
+    }
+*/
