@@ -1,0 +1,145 @@
+:root {
+    /* Cores do tema escuro (VS Code) */
+    --bg-color: #1e1e1e; /* Fundo principal */
+    --text-color: #d4d4d4; /* Texto claro */
+    --card-bg: #252526; /* Fundo do cartão */
+    --accent-color: #569cd6; /* Azul de realce (preços) */
+    --button-color: #4ec9b0; /* Verde-água (botões) */
+    --button-hover: #3a9d8d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333; /* Uma cor um pouco mais clara para o header */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #608b4e; /* Linha verde inspirada em código */
+}
+
+header h1 {
+    color: var(--text-color);
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+header nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+header nav a:hover {
+    border-color: var(--button-color);
+    color: var(--button-color);
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    color: var(--button-color);
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* O Layout de Grelha para os Produtos */
+.products-container {
+    display: grid;
+    /* Adapta-se para ter 3 colunas em ecrãs grandes, ou 1/2 em ecrãs mais pequenos */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border: 1px solid #3c3c3c;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column; /* Para alinhar o conteúdo verticalmente */
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+}
+
+.product-card img {
+    width: 80%;
+    height: 200px;
+    object-fit: contain;
+    margin: 0 auto 15px auto;
+    background-color: #000;
+    border-radius: 4px;
+}
+
+.product-card h3 {
+    color: var(--text-color);
+    font-size: 1.3em;
+    margin: 10px 0;
+}
+
+.product-card .price {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--accent-color);
+    margin: 10px 0 15px 0;
+}
+
+.product-card .description {
+    font-size: 0.9em;
+    color: #999;
+    /* Alinha o texto da descrição */
+    text-align: left; 
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que a descrição ocupe o espaço restante */
+}
+
+/* Estilo do Botão */
+.add-to-cart {
+    background-color: var(--button-color);
+    color: var(--bg-color); /* Texto escuro no botão */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    width: 100%; /* Botão com largura total */
+    margin-top: 15px; /* Espaço entre a descrição e o botão */
+}
+
+.add-to-cart:hover {
+    background-color: var(--button-hover);
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #333;
+    border-top: 3px solid #608b4e;
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #858585;
+}
