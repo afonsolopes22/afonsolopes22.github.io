@@ -1,46 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja Online</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <header>
+        <h1>Loja</h1>
+        <nav>
+            <ul>
+                <li><a href="#secP">Produtos</a></li>
+                <li><a href="#cesto">Cesto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-    <h1>Loja Online</h1>
-  </header>
 
-  <nav>
-    <ul>
-      <li><a href="#">Produtos</a></li>
-      <li><a href="#">Cesto</a></li>
-    </ul>
-  </nav>
+    <main>
+        <section id="secP">
+            <h2>Selecione Seus Produtos</h2>
+            <section id="produtos">
 
-  <main>
-    <section>
-      <h2>Selecione os seus Produtos</h2>
-      <div class="produto-container">
-        <!-- Produtos serão inseridos dinamicamente aqui -->
-      </div>
-    </section>
 
-    <section>
-      <h2>Produtos Selecionados</h2>
-      <div class="cesto-container">
-        <p>Custo total: 0€</p>
-      </div>
-    </section>
-  </main>
+            </section>
+        </section>
 
-  <footer>
-    <p>&copy; 2025 Loja de Produtos</p>
-  </footer>
+        <section id="secC">
+            <h2>Cesto</h2>
+            <section id="cesto">
 
-  <script src="produtos.js"></script> <!-- Carregando os produtos -->
-  <script src="main.js"></script> <!-- Carregando o JavaScript que manipula o DOM -->
 
+            </section>
+            <p>Valor Total: </p>
+            <p id="vlr"></p>
+            <button id="limparCesto">Limpar Cesto</button>
+        </section>
+
+    </main>
+
+    <script type="module" src="script.js"></script>
 </body>
+
 </html>
