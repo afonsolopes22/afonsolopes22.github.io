@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja DEISI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Loja DEISI</h1>
+        <nav>
+            <ul>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="#cart">Cesto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products">
+            <h2>Selecione os seus Produtos</h2>
+            <div id="filters">
+                <select id="category-filter">
+                    <option value="all">Todas as categorias</option>
+                    <option value="T-shirts">T-shirts</option>
+                    <option value="Canecas">Canecas</option>
+                    <option value="Meias">Meias</option>
+                </select>
+                <select id="sort-options">
+                    <option value="default">Ordenar pelo preço</option>
+                    <option value="asc">Preço: Menor para Maior</option>
+                    <option value="desc">Preço: Maior para Menor</option>
+                    <option value="rating-asc">Rating Crescente</option>
+                    <option value="rating-desc">Rating Decrescente</option>
+                </select>
+                <input type="text" id="search" placeholder="Procurar por produto...">
+                <button id="add-all-button">Adicionar Todos</button>
+                <button id="toggle-descriptions">Menos Info</button>
+            </div>
+            <section id="product-list"></section>
+        </section>
+
+        <section id="cart">
+            <h2>Produtos Selecionados</h2>
+            <section id="cart-items"></section>
+            <p id="total-price">Custo total: 0€</p>
+            <label>
+                <input type="checkbox" id="student-checkbox"> Sou estudante do DEISI
+            </label>
+            <input type="text" id="coupon" placeholder="Cupão de desconto">
+            <input type="text" id="address" placeholder="Adicione a sua morada">
+            <button id="buy-button">Comprar</button>
+            <p id="final-price"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Loja DEISI</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

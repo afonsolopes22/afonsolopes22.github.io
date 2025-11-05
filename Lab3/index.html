@@ -31,3 +31,109 @@
   </footer>
 </body>
 </html>
+
+
+ <!-- 1. Ordenar por rating (quantidade de avaliações)
+--------HTML
+
+No <select id="order"> adiciona:
+
+<option>Rating Crescente</option>
+<option>Rating Decrescente</option>
+
+ 
+-----------JS
+
+Na função ordenarProdutos():
+
+case 'rating-asc':
+    return (a.rating?.count || 0) - (b.rating?.count || 0);
+case 'rating-desc':
+    return (b.rating?.count || 0) - (a.rating?.count || 0);
+    }
+  })
+}
+
+setupFiltros():
+
+case 'Rating Crescente':
+    filtros.ordenacao = 'rating-asc'; break;
+case 'Rating Decrescente':
+    filtros.ordenacao = 'rating-desc'; break;
+-->
+<!--
+------------------------------------
+
+
+2. Botão que remove todos os produtos do carrinho
+
+----------------HTML
+
+Coloca este botão ao lado do "Limpar Cesto":
+
+<button id="removerTodos" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
+    Remover Todos
+</button>
+
+
+---------------JS
+
+Depois do DOMContentLoaded:
+
+const btnRemoverTodos = document.getElementById('removerTodos');
+if (btnRemoverTodos) {
+    btnRemoverTodos.addEventListener('click', () => {
+        secaoCesto.innerHTML = '';
+        valorTotal = 0;
+        attCesto();
+        guardarCestoLocalStorage();
+    });
+
+-->
+    <!--
+------------------------------------
+3. Botão "Ocultar Imagens" / "Mostrar Imagens"
+---------------HTML
+
+Coloca este botão na barra superior (junto aos filtros):
+
+<button id="toggleImagens" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+    Ocultar Imagens
+</button>
+-----------------------CSS
+.ocultar-imagens img {
+    display: none;
+}
+
+------------------------JS
+const btnToggleImagens = document.getElementById('toggleImagens');
+if (btnToggleImagens) {
+    btnToggleImagens.addEventListener('click', () => {
+        document.body.classList.toggle('ocultar-imagens');
+        btnToggleImagens.textContent =
+            document.body.classList.contains('ocultar-imagens')
+                ? 'Mostrar Imagens'
+                : 'Ocultar Imagens';
+    });
+}
+
+-->
+<!--
+---------------------------------------
+4. Mostrar contagem de produtos apresentados
+-----------------HTML
+
+Logo acima ou abaixo da grelha de produtos (#produtos):
+
+<p id="contadorProdutos" class="text-sm text-gray-700 font-semibold"></p>
+
+--------------------JS
+
+No fim de renderizarProdutos():
+
+const contador = document.getElementById('contadorProdutos');
+if (contador) {
+    contador.textContent = `A mostrar ${produtosFiltrados.length} produtos`;
+}
+
+-->
