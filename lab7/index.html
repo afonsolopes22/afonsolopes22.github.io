@@ -2,12 +2,15 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja</title>
 
+  <link rel="stylesheet" href="./tailwind.min.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
+
+
 
 <body class="bg-gray-200">
     <header class="flex items-center justify-between pl-2 pr-2 
@@ -26,6 +29,7 @@
     <main>
         <section id="secP" class="bg-indigo-100  flex flex-col items-center p-7 gap-3">
             <h2 class="text-neutral-900 text-2xl">Selecione Seus Produtos</h2>
+            <p id="contagemProdutos" class="text-neutral-900">Produtos visíveis: 0</p>
             <section class="animate-gradient bg-gradient-to-r from-teal-900 via-cyan-700 to-violet-400  
             w-full h-20 rounded-lg flex items-center p-7 justify-between">
 
@@ -42,9 +46,11 @@
                 <aside>
                     <label for="order" class="text-neutral-50">Ordenar</label>
                     <select id="order" class="bg-gray-300 rounded-lg p-1">
-                        <option>Ordenar pelo preço</option>
-                        <option>Preço Decrescente</option>
+                        <option>Ordenar por nome</option>
                         <option>Preço Crescente</option>
+                        <option>Preço Decrescente</option>
+                        <option>Avaliações Crescente</option>
+                        <option>Avaliações Decrescente</option>
                     </select>
                 </aside>
 
@@ -52,6 +58,10 @@
                     <label for="pesquisa" class="text-neutral-50">Procurar:</label>
                     <input type="text" id="pesquisa" placeholder="Pesquisar por nome..."
                         class="bg-gray-200 rounded-lg p-2">
+                </aside>
+
+                <aside>
+                    <button id="toggleImagens" class="bg-gray-800 text-neutral-50 p-2 rounded-lg">Ocultar imagens</button>
                 </aside>
 
             </section>
@@ -70,21 +80,43 @@
 
             </section>
 
-            <section id="barra" class="flex justify-between bg-cyan-50 w-full p-10 rounded-lg">
+            <section class="flex justify-center gap-4">
+                <button id="limparCesto" class="bg-red-500 p-2 rounded-lg hover:bg-red-700 text-white font-bold">Limpar
+                    Cesto</button>
+                <button id="removerTodos" class="bg-orange-500 p-2 rounded-lg hover:bg-orange-700 text-white font-bold">Remover
+                    Todos</button>
+            </section>
+
+
+
+            <section id="barra" class="flex flex-col items-center bg-cyan-50 w-50 p-10 rounded-lg">
                 <section class="p-1">
                     <label for="vlr">Valor Total: </label>
-                    <p id="vlr"></p>
+                    <p id="vlr" class="font-bold"></p>
                 </section>
 
-                <button id="limparCesto" class="bg-red-500 p-2 rounded-lg hover:bg-red-700 text-white font-bold">Limpar Cesto</button>
+                <label for="deisi" class="p-2">És estudante DEISI?</label>
+                <input type="checkbox" id="deisi">
+
+                <label for="cupom" class="p-2">Tens cupom de desconto?</label>
+                <input type="text" id="cupom" placeholder="Insira Cumpom" class="">
+
+                <button id="comprar"
+                    class="bg-green-500 p-2 rounded-lg hover:bg-green-700 text-white font-bold">Comprar</button>
+
+                <p id="res"></p>
             </section>
+            
+
+
 
         </section>
 
     </main>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="script.js"></script>
+    
+    <script src="script.js"></script>
+
 </body>
 
 </html>

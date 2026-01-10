@@ -2,6 +2,7 @@
 import{ produtos } from './produtos.js';
 
 const secaoProdutos = document.getElementById('produtos');
+const secaoCesto = document.getElementById('cesto');
 
 const valorTotalP = document.querySelector('#secC #vlr')
 let valorTotal = 0.0;
@@ -100,3 +101,19 @@ document.getElementById('limparCesto').addEventListener('click', () => {
     secaoCesto.innerHTML = '';
     carregarLocalStorage(); // recarrega a lista vazia
 });
+
+// Toggle images button
+const toggleBtn = document.getElementById('toggleImagesBtn');
+let imagesHidden = false;
+function updateToggleText() {
+    if (!toggleBtn) return;
+    toggleBtn.textContent = imagesHidden ? 'Mostrar imagens' : 'Ocultar imagens';
+}
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+        imagesHidden = !imagesHidden;
+        document.body.classList.toggle('images-hidden', imagesHidden);
+        updateToggleText();
+    });
+    updateToggleText();
+}
