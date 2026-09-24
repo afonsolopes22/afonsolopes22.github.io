@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multimédia - Cidade</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
@@ -17,6 +18,62 @@
     </header>
     <main>
       <h2>Multimédia</h2>
+      <p>Descubra Estocolmo através de fotografias, vídeo e poesia.</p>
+      <nav class="ancoras" aria-label="Secções multimédia">
+        <a href="#fotografias">Fotografias</a>
+        <a href="#video">Vídeo</a>
+        <a href="#poesia">Poesia</a>
+      </nav>
+
+      <section>
+        <h3 id="fotografias">Fotografias</h3>
+        <div class="fotografias">
+          <img src="images/gamlastan.jpg" alt="Casas coloridas de Gamla Stan" />
+          <img src="images/ayuntamiento.jpg" alt="Ayuntamiento de Estocolmo" />
+          <img src="images/museovasa.jpg" alt="Museo Vasa de Estocolmo" />
+          <img src="images/palacioreal.jpg" alt="Palacio Real de Estocolmo" />
+          <img src="images/archipielago.jpg" alt="Archipiélago de Estocolmo" />
+          <img src="images/sergelstorg.jpg" alt="Plaza Sergels torg" />
+          <img src="images/metroarte.jpg" alt="Arte en el metro de Estocolmo" />
+          <img
+            src="images/monteliusvagen.jpg"
+            alt="Vista de Estocolmo desde Monteliusvagen"
+          />
+        </div>
+      </section>
+
+      <section>
+        <h3 id="video">Vídeo</h3>
+        <iframe
+          class="video"
+          src="https://www.youtube.com/embed/Scxs7L0vhZ4"
+          title="Vídeo sobre Estocolmo"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <section>
+        <h3 id="poesia">Poesia</h3>
+        <div class="poema">
+          <p>Entre ilhas, pontes e luz do norte,</p>
+          <p>Estocolmo acorda junto ao mar,</p>
+          <p>cada rua guarda uma história</p>
+          <p>e cada janela aprende a brilhar.</p>
+          <p>Na água repousa a cidade,</p>
+          <p>serena, fria e musical,</p>
+          <p>um encontro de terra e horizonte</p>
+          <p>no coração do Báltico azul.</p>
+        </div>
+      </section>
     </main>
     <footer>
       <p>DIW 2026</p>

@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Informação - Cidade</title>
+    <title>Informações - Cidade</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
@@ -16,7 +17,78 @@
       </nav>
     </header>
     <main>
-      <h2>Informação</h2>
+      <h2>Informações</h2>
+      <p>
+        Conheça alguns dados históricos, geográficos e culturais de Estocolmo.
+      </p>
+      <img
+        class="imagem-cidade"
+        src="images/ayuntamiento.jpg"
+        alt="Ayuntamiento de Estocolmo"
+      />
+
+      <table>
+        <caption>
+          Dados principais de Estocolmo
+        </caption>
+        <thead>
+          <tr>
+            <th colspan="4">Informações gerais</th>
+          </tr>
+          <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Dado</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Observação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="2" scope="rowgroup">Geografia</th>
+            <td>País</td>
+            <td>Suécia</td>
+            <td>Europa do Norte</td>
+          </tr>
+          <tr>
+            <td>Localização</td>
+            <td>Mar Báltico</td>
+            <td>Construída sobre 14 ilhas</td>
+          </tr>
+          <tr>
+            <th scope="row">História</th>
+            <td>Fundação</td>
+            <td>1252</td>
+            <td>Origem medieval</td>
+          </tr>
+          <tr>
+            <th scope="row">Cultura</th>
+            <td>Museu Vasa</td>
+            <td>1628</td>
+            <td>Navio histórico preservado</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Curiosidades sobre Estocolmo</h3>
+      <ol class="curiosidades">
+        <li>
+          Estocolmo é conhecida como a “Veneza do Norte” devido aos seus canais
+          e ilhas.
+        </li>
+        <li>A cidade é formada por 14 ilhas ligadas por mais de 50 pontes.</li>
+        <li>
+          O Museu Vasa guarda um navio de guerra que naufragou na sua viagem
+          inaugural, em 1628.
+        </li>
+        <li>
+          A rede de metro de Estocolmo é famosa pelas suas estações decoradas
+          como galerias de arte.
+        </li>
+        <li>
+          Os prémios Nobel são entregues anualmente em Estocolmo, com exceção do
+          Prémio Nobel da Paz.
+        </li>
+      </ol>
     </main>
     <footer>
       <p>DIW 2026</p>
