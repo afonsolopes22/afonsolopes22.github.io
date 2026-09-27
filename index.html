@@ -3,19 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laboratórios DIW</title>
+    <title>Interfaces Web</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <h1>Laboratórios</h1>
+    <section id="inicio" class="hero">
       <nav>
-        <a href="lab1/index.html">Lab 1</a>
-        <a href="lab2/index.html">Lab 2</a>
-        <a href="https://moodle.org/" target="_blank" rel="noopener noreferrer"
-          >Moodle</a
-        >
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#cadeira">Interfaces Web</a></li>
+          <li><a href="tutoriais.html">Tutoriais</a></li>
+        </ul>
       </nav>
-    </main>
+      <div class="hero-text">
+        <h1>Desenvolvimento de Interfaces Web</h1>
+        <p>
+          Afonso Lopes -> <a class="botao" href="#projetos">Ver projetos</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2>Projetos</h2>
+      <p>Trabalhos realizados ao longo da disciplina.</p>
+      <div class="cartoes">
+        <a class="cartao" href="lab1/index.html">
+          <h3>Lab 1</h3>
+          <p>Estrutura base e HTML semântico.</p>
+        </a>
+        <a class="cartao" href="lab2/index.html">
+          <h3>Lab 2</h3>
+          <p>Uma página sobre a cidade de Estocolmo.</p>
+        </a>
+        <a class="cartao" href="lab3/index.html">
+          <h3>Lab 3</h3>
+          <p>Layout responsivo e apresentação dos projetos.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="cadeira" class="cadeira">
+      <div>
+        <h2>A disciplina</h2>
+        <p>
+          Interfaces Web aborda a criação de páginas através de HTML e CSS.
+          Durante os laboratórios aprendemos a organizar conteúdo, criar layouts
+          e adaptar uma página a diferentes tamanhos de ecrã.
+        </p>
+        <p>
+          Também exploramos imagens, links, navegação e os elementos semânticos
+          do HTML5.
+        </p>
+      </div>
+      <img src="lab2/wordcloud.svg" alt="Wordcloud sobre a cidade" />
+    </section>
   </body>
 </html>

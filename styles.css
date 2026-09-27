@@ -1,3 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #b3b3b3;
+  margin: 0;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+section {
+  height: 100vh;
+  padding: 30px 8%;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  position: relative;
+  color: white;
+  background-image: url("lab2/images/sergelstorg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  content: "";
+}
+
+.hero nav,
+.hero-text {
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  top: 45%;
+  left: 8%;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 4rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+.botao {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  color: #222;
+  background: #f6c85f;
+  text-decoration: none;
+}
+
+.projetos {
+  background: #f7d6c9;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+.cartoes {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.cartao {
+  flex: 1;
+  min-height: 220px;
+  padding: 25px;
+  color: #222;
+  background: #f5a9b8;
+  text-decoration: none;
+}
+
+.cartao:nth-child(2) {
+  background: #a8d5cf;
+}
+
+.cartao:nth-child(3) {
+  background: #f6c85f;
+}
+
+.cartao:hover {
+  outline: 3px solid #222;
+}
+
+.cadeira {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: #c9d8ee;
+}
+
+.cadeira div,
+.cadeira img {
+  width: 50%;
+}
+
+.cadeira p {
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.cadeira img {
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  section {
+    padding: 25px 6%;
+  }
+
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px 20px;
+  }
+
+  .hero-text {
+    left: 6%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .cartoes,
+  .cadeira {
+    flex-direction: column;
+  }
+
+  .cartao {
+    width: 100%;
+    min-height: 130px;
+  }
+
+  .cadeira {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .cadeira div,
+  .cadeira img {
+    width: 100%;
+  }
 }

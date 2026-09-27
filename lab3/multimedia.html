@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimédia - Cidade</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="pagina-multimedia">
+    <header>
+      <h1>A minha Cidade</h1>
+      <nav aria-label="Navegação principal">
+        <a href="index.html">Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="info.html">Informação</a>
+      </nav>
+    </header>
+    <main>
+      <div class="multimedia-intro">
+        <h2>Multimédia</h2>
+        <p>Descubra Estocolmo através de fotografias, vídeo e poesia.</p>
+        <nav class="ancoras" aria-label="Secções multimédia">
+          <a href="#fotografias">Fotografias</a>
+          <a href="#video">Vídeo</a>
+          <a href="#video-background">Vídeo background</a>
+          <a href="#parallax">Parallax</a>
+          <a href="#poesia">Poesia</a>
+        </nav>
+      </div>
+
+      <section
+        class="foto-destaque"
+        aria-label="Imagem de destaque de Estocolmo"
+      >
+        <img src="images/sergelstorg.jpg" alt="Sergels torg em Estocolmo" />
+        <p class="frase-destaque">Uma cidade feita de ilhas e histórias.</p>
+      </section>
+
+      <section class="media-section fotos-section">
+        <h3 id="fotografias">Fotografias</h3>
+        <div class="fotografias">
+          <img src="images/gamlastan.jpg" alt="Casas coloridas de Gamla Stan" />
+          <img src="images/ayuntamiento.jpg" alt="Ayuntamiento de Estocolmo" />
+          <img src="images/museovasa.jpg" alt="Museo Vasa de Estocolmo" />
+          <img src="images/palacioreal.jpg" alt="Palacio Real de Estocolmo" />
+          <img src="images/archipielago.jpg" alt="Archipiélago de Estocolmo" />
+          <img src="images/sergelstorg.jpg" alt="Plaza Sergels torg" />
+          <img src="images/metroarte.jpg" alt="Arte en el metro de Estocolmo" />
+          <img
+            src="images/monteliusvagen.jpg"
+            alt="Vista de Estocolmo desde Monteliusvagen"
+          />
+        </div>
+      </section>
+
+      <section class="media-section video-section">
+        <h3 id="video">Vídeo</h3>
+        <iframe
+          class="video"
+          src="https://www.youtube.com/embed/Scxs7L0vhZ4"
+          title="Vídeo sobre Estocolmo"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <section id="video-background" class="video-background">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="images/monteliusvagen.jpg"
+        >
+          <source
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+            type="video/mp4"
+          />
+          O seu navegador não suporta vídeo HTML5.
+        </video>
+        <div class="video-background-text">
+          <h3>Uma cidade em movimento</h3>
+          <p>O vídeo como parte do ambiente da página.</p>
+        </div>
+      </section>
+
+      <section id="parallax" class="parallax-section">
+        <div class="parallax-text">
+          <h3>Entre ilhas e horizontes</h3>
+          <p>Uma imagem que acompanha o movimento da página.</p>
+        </div>
+      </section>
+
+      <section class="media-section poesia-section">
+        <h3 id="poesia">Poesia</h3>
+        <div class="poema">
+          <p>Entre ilhas, pontes e luz do norte,</p>
+          <p>Estocolmo acorda junto ao mar,</p>
+          <p>cada rua guarda uma história</p>
+          <p>e cada janela aprende a brilhar.</p>
+          <p>Na água repousa a cidade,</p>
+          <p>serena, fria e musical,</p>
+          <p>um encontro de terra e horizonte</p>
+          <p>no coração do Báltico azul.</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>DIW 2026</p>
+    </footer>
+  </body>
+</html>
