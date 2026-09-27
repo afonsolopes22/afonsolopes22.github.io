@@ -28,16 +28,16 @@ nav {
   padding: 0.75rem 0;
 }
 
-header nav a {
-  flex: 1 1 9rem;
-  text-align: center;
-}
-
 nav a {
   padding: 0.45rem 0.7rem;
   color: #1d3557;
   background-color: #f1faee;
   text-decoration: none;
+}
+
+header nav a {
+  flex: 1 1 9rem;
+  text-align: center;
 }
 
 .ancoras a {
@@ -70,6 +70,14 @@ main {
 .multimedia-intro {
   padding: 2rem 1rem;
   background-color: #f1faee;
+}
+
+main > img,
+.imagem-cidade {
+  display: block;
+  width: min(100%, 600px);
+  height: auto;
+  margin: 1.5rem auto;
 }
 
 .foto-destaque {
@@ -226,6 +234,15 @@ main {
   min-width: 0;
 }
 
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
 .info-table table {
   margin: 0;
 }
@@ -234,18 +251,19 @@ main {
   grid-area: curiosidades;
 }
 
-main > img,
-.imagem-cidade {
-  display: block;
-  width: min(100%, 600px);
-  height: auto;
-  margin: 1.5rem auto;
-}
-
 .localizacao-layout {
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+footer p {
+  margin: 0;
 }
 
 .localizacao-layout p,
@@ -261,20 +279,11 @@ main > img,
   height: 400px;
 }
 
-iframe {
-  max-width: 100%;
-  border: 0;
-}
-
 footer {
   padding: 1rem;
   background-color: #1d3557;
   color: #fff;
   text-align: center;
-}
-
-footer p {
-  margin: 0;
 }
 
 .ancoras {
@@ -328,15 +337,6 @@ footer p {
 
 .poema p:nth-child(3n) {
   font-style: italic;
-}
-
-table {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  margin: 1.5rem 0 2rem;
-  border-collapse: collapse;
-  background-color: #fff;
 }
 
 caption {
