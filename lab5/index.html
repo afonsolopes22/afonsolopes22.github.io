@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos 1.0</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        place-items: center;
+        background: #f3efe7;
+        color: #242424;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        width: min(90%, 700px);
+        padding: 3rem;
+        border: 3px solid #242424;
+        background: #fff;
+        text-align: center;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      #mensagem {
+        min-height: 1.5em;
+        font-weight: 700;
+      }
+
+      #temporizador {
+        margin: 1.5rem 0;
+        font-size: 2rem;
+        font-weight: 800;
+      }
+
+      #alvo {
+        display: grid;
+        min-height: 180px;
+        margin: 2rem 0;
+        padding: 2rem;
+        place-items: center;
+        border: 3px dashed #242424;
+        background: #f7c948;
+        cursor: pointer;
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      #alvo.destacado {
+        transform: scale(1.03);
+      }
+
+      .controlos {
+        display: grid;
+        gap: 1rem;
+        margin-top: 2rem;
+        text-align: left;
+      }
+
+      label {
+        font-weight: 700;
+      }
+
+      select {
+        padding: 0.7rem;
+        border: 2px solid #242424;
+        background: #fff;
+        font: inherit;
+      }
+
+      #bolas {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        height: 200px;
+        padding: 1rem;
+        background: #bdbdbd;
+        transition: flex-direction 200ms ease;
+      }
+
+      .bola {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+        border-radius: 50%;
+      }
+
+      .bola:nth-child(1) {
+        background: #f7c948;
+      }
+
+      .bola:nth-child(2) {
+        background: #f28cb1;
+      }
+
+      .bola:nth-child(3) {
+        background: #83c5be;
+      }
+
+      .bola:nth-child(4) {
+        background: #9b8de5;
+      }
+
+      button {
+        padding: 0.8rem 1.2rem;
+        border: 0;
+        background: #242424;
+        color: #fff;
+        cursor: pointer;
+        font: inherit;
+      }
+
+      button:hover,
+      button:focus {
+        background: #555;
+      }
+
+      code {
+        display: block;
+        margin-top: 1.5rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Eventos 1.0</h1>
+      <p>Experimenta os cinco eventos básicos nesta página.</p>
+      <p id="mensagem" aria-live="polite">Aguarda uma interação...</p>
+      <p id="temporizador" aria-live="polite">Tempo: 0 segundos</p>
+
+      <div id="alvo" tabindex="0">
+        Interage comigo
+      </div>
+
+      <button type="button" id="botao">Recomeçar</button>
+
+      <div class="controlos">
+        <label for="cor-pagina">Escolhe a cor da página:</label>
+        <select id="cor-pagina">
+          <option value="#f3efe7">Creme</option>
+          <option value="#d7cdf2">Lilás</option>
+          <option value="#b7d8c0">Verde</option>
+          <option value="#f7c948">Amarelo</option>
+        </select>
+
+        <label for="direcao">Escolhe a direção das bolas:</label>
+        <select id="direcao">
+          <option value="row">row</option>
+          <option value="row-reverse">row-reverse</option>
+          <option value="column">line</option>
+          <option value="column-reverse">line-reverse</option>
+        </select>
+        <div id="bolas" aria-label="Quatro bolas coloridas">
+          <span class="bola"></span>
+          <span class="bola"></span>
+          <span class="bola"></span>
+          <span class="bola"></span>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const alvo = document.getElementById("alvo");
+      const mensagem = document.getElementById("mensagem");
+      const botao = document.getElementById("botao");
+      const corPagina = document.getElementById("cor-pagina");
+      const direcao = document.getElementById("direcao");
+      const bolas = document.getElementById("bolas");
+      let segundos = 0;
+
+      const clicar = () => {
+        mensagem.textContent = "Fizeste click no alvo.";
+        alvo.textContent = "Click detetado!";
+      };
+
+      function duploClique() {
+        mensagem.textContent = "Fizeste duplo click no alvo.";
+        alvo.textContent = "Dois clicks!";
+      }
+
+      function passarPorCima() {
+        mensagem.textContent = "O rato está sobre o alvo.";
+        alvo.classList.add("destacado");
+      }
+
+      function sairDoAlvo() {
+        mensagem.textContent = "O rato saiu do alvo.";
+        alvo.classList.remove("destacado");
+      }
+
+      function recomecar() {
+        alvo.style.backgroundColor = "#f7c948";
+        alvo.textContent = "Interage comigo";
+        mensagem.textContent = "A página foi reiniciada.";
+      }
+
+      function mudarCor() {
+        document.body.style.backgroundColor = this.value;
+        mensagem.textContent = `Cor da página alterada para ${this.options[this.selectedIndex].text}.`;
+      }
+
+      function mudarDirecao() {
+        bolas.style.flexDirection = this.value;
+      }
+
+      function contarTempo() {
+        segundos += 1;
+        document.getElementById("temporizador").textContent =
+          `Tempo: ${segundos} segundo${segundos === 1 ? "" : "s"}`;
+      }
+
+      alvo.addEventListener("click", clicar);
+      alvo.addEventListener("dblclick", duploClique);
+      alvo.addEventListener("mouseover", passarPorCima);
+      alvo.addEventListener("mouseout", sairDoAlvo);
+      botao.addEventListener("click", recomecar);
+      corPagina.addEventListener("change", mudarCor);
+      direcao.addEventListener("change", mudarDirecao);
+      setInterval(contarTempo, 1000);
+    </script>
+  </body>
+</html>
