@@ -1,0 +1,280 @@
+:root {
+  --tinta: #20232a;
+  --creme: #f5f0e8;
+  --laranja: #f26b38;
+  --amarelo: #f7c948;
+  --verde: #b7d8c0;
+  --lilás: #d7cdf2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--tinta);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.cabecalho {
+  min-height: 640px;
+  padding: 1.5rem 7vw 5rem;
+  color: var(--creme);
+  background: var(--tinta);
+}
+
+.navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1180px;
+  margin: auto;
+}
+
+.navegacao a,
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.marca {
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links a:hover,
+.links a:focus,
+footer a:hover,
+footer a:focus {
+  color: var(--amarelo);
+}
+
+.hero {
+  max-width: 1180px;
+  margin: 9rem auto 0;
+}
+
+.etiqueta,
+.numero,
+.pista {
+  color: var(--laranja);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 800px;
+  margin: 1rem 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.hero h1 em {
+  color: var(--amarelo);
+  font-style: normal;
+}
+
+.intro {
+  max-width: 430px;
+  margin-bottom: 2rem;
+  color: #c3c4c8;
+}
+
+.botao {
+  display: inline-block;
+  border: 0;
+  padding: 0.9rem 1.3rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.botao-claro {
+  color: var(--tinta);
+  background: var(--amarelo);
+}
+
+.botao-escuro {
+  color: var(--creme);
+  background: var(--tinta);
+}
+
+.botao:hover,
+.botao:focus {
+  transform: translateY(-3px);
+}
+
+main {
+  max-width: 1180px;
+  margin: auto;
+}
+
+.contador-area {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 7vw;
+}
+
+h2 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.contador-area p:not(.etiqueta) {
+  max-width: 390px;
+  margin-bottom: 0;
+  color: #65656a;
+}
+
+.contador {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  padding: 1rem;
+  border: 2px solid var(--tinta);
+  text-align: center;
+}
+
+.contador span {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.contador small {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.eventos {
+  padding: 5rem 7vw;
+  background: var(--verde);
+}
+
+.secao-titulo {
+  margin-bottom: 2.5rem;
+}
+
+.cartoes-evento {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.cartao {
+  min-height: 270px;
+  padding: 1.5rem;
+  border: 2px solid var(--tinta);
+  background: var(--creme);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.cartao:hover {
+  transform: translateY(-8px);
+  box-shadow: 7px 7px 0 var(--tinta);
+}
+
+.cartao h3 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.cartao p {
+  color: #65656a;
+}
+
+.pista {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--tinta);
+  font-size: 0.65rem;
+}
+
+.cartao.ativo {
+  background: var(--amarelo);
+}
+
+.mapa {
+  background: var(--lilás);
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 6rem 7vw;
+}
+
+.galeria p:not(.etiqueta) {
+  color: #65656a;
+}
+
+.galeria img {
+  width: 100%;
+  border: 2px solid var(--tinta);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 7vw;
+  color: var(--creme);
+  background: var(--tinta);
+}
+
+footer span {
+  color: var(--amarelo);
+}
+
+@media (max-width: 800px) {
+  .hero {
+    margin-top: 6rem;
+  }
+
+  .contador-area,
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+
+  .cartoes-evento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .links {
+    gap: 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .cartoes-evento {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artilhada | Laboratório 4</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a class="marca" href="#inicio">ARTILHADA</a>
+        <div class="links">
+          <a href="#eventos">Eventos</a>
+          <a href="#experiencia">Experiência</a>
+        </div>
+      </nav>
+      <div class="hero" id="inicio">
+        <p class="etiqueta">Laboratório 04 · Interfaces Web</p>
+        <h1>Uma página que<br /><em>ganha vida</em> com o rato.</h1>
+        <p class="intro">
+          Explora esta pequena experiência interativa. Cada movimento deixa
+          uma marca e cada clique conta uma história.
+        </p>
+        <a class="botao botao-claro" href="#eventos">Começar a explorar ↓</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="contador-area" id="experiencia" aria-labelledby="contador-titulo">
+        <div>
+          <p class="etiqueta">O teu percurso</p>
+          <h2 id="contador-titulo">Interações realizadas</h2>
+          <p id="mensagem" aria-live="polite">
+            Clica no botão para iniciares a tua contagem.
+          </p>
+        </div>
+        <div class="contador" aria-label="Contador de interações">
+          <span id="contador-valor">0</span>
+          <small>interações</small>
+        </div>
+        <button class="botao botao-escuro" type="button" onclick="contarClique()">
+          Registar um clique
+        </button>
+      </section>
+
+      <section class="eventos" id="eventos" aria-labelledby="eventos-titulo">
+        <div class="secao-titulo">
+          <p class="etiqueta">Cinco gestos, cinco respostas</p>
+          <h2 id="eventos-titulo">Experimenta os eventos</h2>
+        </div>
+        <div class="cartoes-evento">
+          <article class="cartao" onclick="contarClique()">
+            <span class="numero">01</span>
+            <h3>Clique</h3>
+            <p>Pressiona este cartão para aumentar o contador.</p>
+            <span class="pista">faz click</span>
+          </article>
+          <article class="cartao" ondblclick="duploClique(this)">
+            <span class="numero">02</span>
+            <h3>Duplo clique</h3>
+            <p>Clica duas vezes e descobre uma mensagem escondida.</p>
+            <span class="pista">double tap</span>
+          </article>
+          <article class="cartao destaque" onmouseover="entrouNoCartao(this)" onmouseout="saiuDoCartao(this)">
+            <span class="numero">03</span>
+            <h3>Mouseover</h3>
+            <p>Passa o rato por cima para iluminar este momento.</p>
+            <span class="pista">move over</span>
+          </article>
+          <article class="cartao" onmouseout="saiuDoCartao(this)" onmouseover="entrouNoCartao(this)">
+            <span class="numero">04</span>
+            <h3>Mouseout</h3>
+            <p>Entra e sai do cartão para alterar o seu estado.</p>
+            <span class="pista">leave me</span>
+          </article>
+          <article class="cartao mapa" onmousemove="moverRato(event, this)">
+            <span class="numero">05</span>
+            <h3>Mousemove</h3>
+            <p id="coordenadas">Move o rato e acompanha as coordenadas.</p>
+            <span class="pista">move freely</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="galeria" aria-labelledby="galeria-titulo">
+        <div>
+          <p class="etiqueta">Pausa visual</p>
+          <h2 id="galeria-titulo">O movimento também pode ser imagem.</h2>
+          <p>
+            Uma composição criada para este laboratório: cor, ritmo e espaço
+            num instante parado.
+          </p>
+        </div>
+        <img src="images/fotografia.svg" alt="Composição abstrata com círculos coloridos" />
+      </section>
+    </main>
+
+    <footer>
+      <p>Artilhada <span>·</span> Laboratório de eventos JavaScript</p>
+      <a href="../index.html">Voltar à página inicial</a>
+    </footer>
+  </body>
+</html>
